@@ -1,0 +1,793 @@
+{
+  "metadata": {
+    "golden_set_path": "eval\\golden_set\\golden_examples.jsonl",
+    "total_records": 200,
+    "top_majority_intent": "other_unclear",
+    "timestamp": "2026-09-17"
+  },
+  "baselines": {
+    "trivial_baseline_always_escalate": {
+      "baseline_name": "trivial_always_escalate",
+      "description": "Majority-class intent prediction ('other_unclear') + single canned template + Always-Escalate policy. Defensible fail-safe floor (0.0% missed escalation safety floor, 0% automated deflection).",
+      "total_samples": 200,
+      "intent_accuracy": 0.135,
+      "escalation_accuracy": 0.365,
+      "escalation_precision": 0.365,
+      "escalation_recall": 1.0,
+      "false_escalation_rate": 1.0,
+      "missed_escalation_rate": 0.0,
+      "escalation_confusion": {
+        "true_positives": 73,
+        "false_positives": 127,
+        "true_negatives": 0,
+        "false_negatives": 0
+      },
+      "per_intent_metrics": {
+        "account_access_security": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 16
+        },
+        "billing_payment_disputes": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 19
+        },
+        "carrier_physical_delivery_issue": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 15
+        },
+        "customer_service_escalation": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 13
+        },
+        "damaged_defective_wrong_item": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 20
+        },
+        "delivery_not_received": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 18
+        },
+        "order_cancellation_modification": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 7
+        },
+        "order_status_delay": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 25
+        },
+        "other_unclear": {
+          "precision": 0.135,
+          "recall": 1.0,
+          "f1": 0.2379,
+          "support": 27
+        },
+        "prime_subscription_benefits": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 8
+        },
+        "product_inquiry_availability": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 9
+        },
+        "returns_refunds": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 23
+        }
+      },
+      "intent_confusion_matrix": {
+        "account_access_security": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 16,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "billing_payment_disputes": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 19,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "carrier_physical_delivery_issue": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 15,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "customer_service_escalation": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 13,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "damaged_defective_wrong_item": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 20,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "delivery_not_received": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 18,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "order_cancellation_modification": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 7,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "order_status_delay": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 25,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "other_unclear": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 27,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "prime_subscription_benefits": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 8,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "product_inquiry_availability": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 9,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "returns_refunds": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 23,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        }
+      }
+    },
+    "trivial_baseline_never_escalate": {
+      "baseline_name": "trivial_never_escalate",
+      "description": "Majority-class intent prediction ('other_unclear') + single canned template + Never-Escalate policy. Naive full deflection bot floor (100.0% missed escalation failure).",
+      "total_samples": 200,
+      "intent_accuracy": 0.135,
+      "escalation_accuracy": 0.635,
+      "escalation_precision": 0.0,
+      "escalation_recall": 0.0,
+      "false_escalation_rate": 0.0,
+      "missed_escalation_rate": 1.0,
+      "escalation_confusion": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "true_negatives": 127,
+        "false_negatives": 73
+      },
+      "per_intent_metrics": {
+        "account_access_security": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 16
+        },
+        "billing_payment_disputes": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 19
+        },
+        "carrier_physical_delivery_issue": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 15
+        },
+        "customer_service_escalation": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 13
+        },
+        "damaged_defective_wrong_item": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 20
+        },
+        "delivery_not_received": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 18
+        },
+        "order_cancellation_modification": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 7
+        },
+        "order_status_delay": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 25
+        },
+        "other_unclear": {
+          "precision": 0.135,
+          "recall": 1.0,
+          "f1": 0.2379,
+          "support": 27
+        },
+        "prime_subscription_benefits": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 8
+        },
+        "product_inquiry_availability": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 9
+        },
+        "returns_refunds": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 23
+        }
+      },
+      "intent_confusion_matrix": {
+        "account_access_security": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 16,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "billing_payment_disputes": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 19,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "carrier_physical_delivery_issue": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 15,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "customer_service_escalation": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 13,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "damaged_defective_wrong_item": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 20,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "delivery_not_received": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 18,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "order_cancellation_modification": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 7,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "order_status_delay": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 25,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "other_unclear": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 27,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "prime_subscription_benefits": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 8,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "product_inquiry_availability": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 9,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "returns_refunds": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 23,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        }
+      }
+    },
+    "simple_keyword_baseline": {
+      "baseline_name": "simple_keyword_baseline",
+      "description": "Deterministic keyword/regex intent classifier + intent-specific canned response templates + rule-based escalation on high-risk intents and keywords. Classical non-ML floor.",
+      "total_samples": 200,
+      "intent_accuracy": 0.605,
+      "escalation_accuracy": 0.775,
+      "escalation_precision": 0.8182,
+      "escalation_recall": 0.4932,
+      "false_escalation_rate": 0.063,
+      "missed_escalation_rate": 0.5068,
+      "escalation_confusion": {
+        "true_positives": 36,
+        "false_positives": 8,
+        "true_negatives": 119,
+        "false_negatives": 37
+      },
+      "per_intent_metrics": {
+        "account_access_security": {
+          "precision": 1.0,
+          "recall": 0.125,
+          "f1": 0.2222,
+          "support": 16
+        },
+        "billing_payment_disputes": {
+          "precision": 0.9167,
+          "recall": 0.5789,
+          "f1": 0.7097,
+          "support": 19
+        },
+        "carrier_physical_delivery_issue": {
+          "precision": 1.0,
+          "recall": 0.2,
+          "f1": 0.3333,
+          "support": 15
+        },
+        "customer_service_escalation": {
+          "precision": 1.0,
+          "recall": 0.3077,
+          "f1": 0.4706,
+          "support": 13
+        },
+        "damaged_defective_wrong_item": {
+          "precision": 0.72,
+          "recall": 0.9,
+          "f1": 0.8,
+          "support": 20
+        },
+        "delivery_not_received": {
+          "precision": 0.8,
+          "recall": 0.2222,
+          "f1": 0.3478,
+          "support": 18
+        },
+        "order_cancellation_modification": {
+          "precision": 0.4286,
+          "recall": 0.4286,
+          "f1": 0.4286,
+          "support": 7
+        },
+        "order_status_delay": {
+          "precision": 0.9091,
+          "recall": 0.8,
+          "f1": 0.8511,
+          "support": 25
+        },
+        "other_unclear": {
+          "precision": 0.3293,
+          "recall": 1.0,
+          "f1": 0.4954,
+          "support": 27
+        },
+        "prime_subscription_benefits": {
+          "precision": 1.0,
+          "recall": 0.75,
+          "f1": 0.8571,
+          "support": 8
+        },
+        "product_inquiry_availability": {
+          "precision": 1.0,
+          "recall": 0.8889,
+          "f1": 0.9412,
+          "support": 9
+        },
+        "returns_refunds": {
+          "precision": 0.625,
+          "recall": 0.6522,
+          "f1": 0.6383,
+          "support": 23
+        }
+      },
+      "intent_confusion_matrix": {
+        "account_access_security": {
+          "account_access_security": 2,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 14,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "billing_payment_disputes": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 11,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 2,
+          "order_status_delay": 0,
+          "other_unclear": 6,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "carrier_physical_delivery_issue": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 3,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 2,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 1,
+          "order_status_delay": 0,
+          "other_unclear": 7,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 2
+        },
+        "customer_service_escalation": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 4,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 7,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 2
+        },
+        "damaged_defective_wrong_item": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 18,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 2,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "delivery_not_received": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 4,
+          "order_cancellation_modification": 1,
+          "order_status_delay": 1,
+          "other_unclear": 9,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 3
+        },
+        "order_cancellation_modification": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 1,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 3,
+          "order_status_delay": 0,
+          "other_unclear": 3,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "order_status_delay": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 1,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 20,
+          "other_unclear": 3,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 1
+        },
+        "other_unclear": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 27,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "prime_subscription_benefits": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 1,
+          "other_unclear": 1,
+          "prime_subscription_benefits": 6,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 0
+        },
+        "product_inquiry_availability": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 0,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 0,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 8,
+          "returns_refunds": 1
+        },
+        "returns_refunds": {
+          "account_access_security": 0,
+          "billing_payment_disputes": 0,
+          "carrier_physical_delivery_issue": 0,
+          "customer_service_escalation": 0,
+          "damaged_defective_wrong_item": 5,
+          "delivery_not_received": 0,
+          "order_cancellation_modification": 0,
+          "order_status_delay": 0,
+          "other_unclear": 3,
+          "prime_subscription_benefits": 0,
+          "product_inquiry_availability": 0,
+          "returns_refunds": 15
+        }
+      }
+    }
+  }
+}

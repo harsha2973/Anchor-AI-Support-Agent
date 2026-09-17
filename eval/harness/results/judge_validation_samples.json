@@ -1,0 +1,1561 @@
+[
+  {
+    "sample_id": "VAL_001",
+    "test_id": "GOLDEN_001",
+    "difficulty": "routine",
+    "customer_query": "where is my package? Last time you deliver to my neighbors and this time it's no where. :'(",
+    "thread_context": "None (opening turn)",
+    "agent_response": "Hello! Terribly sorry for the frustration, Ahsan! What's the updated tracking information state here: https://t.co/Y5jpI9gRhE",
+    "escalated": false,
+    "escalate_reason": "Autonomous handling approved: High confidence (85.00%) in intent 'order_status_delay' backed by 3 qualified grounding precedent(s).",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1002197_1002196",
+        "category": "order_status_delay",
+        "content": "Terribly sorry for the frustration, Ahsan! What's the updated tracking information state here: https://t.co/Y5jpI9gRhE"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1108320_1108318",
+        "category": "order_status_delay",
+        "content": "Hello, Ayat! Could you please tell me who the carrier for your package is? We're here to help! https://t.co/Y5jpI9gRhE ^MW"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1052385_1052383",
+        "category": "order_status_delay",
+        "content": "your family members/neighbors/security guards for the order package? 2/2 ^AP"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_001",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Grounded cleanly in precedent with empathetic tone and clear guidance."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_002",
+    "test_id": "GOLDEN_002",
+    "difficulty": "routine",
+    "customer_query": "Where is my TV? I have paid for it and it got delivered in other location. Please refund me my money or deliver TV.",
+    "thread_context": "None (opening turn)",
+    "agent_response": "Hello! Have we missed the delivery date for this TV you ordered? What is the current tracking status showing when you review your order details: https://t.co/aaDyEz1VgE?",
+    "escalated": true,
+    "escalate_reason": "Escalated: Intent confidence (0.85) is below operational threshold (0.65) or prediction is ambiguous.",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1100491_1100490",
+        "category": "order_status_delay",
+        "content": "Have we missed the delivery date for this TV you ordered? What is the current tracking status showing when you review your order details: https://t.co/aaDyEz1VgE? ^WM"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1002197_1002196",
+        "category": "order_status_delay",
+        "content": "Terribly sorry for the frustration, Ahsan! What's the updated tracking information state here: https://t.co/Y5jpI9gRhE"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1052385_1052383",
+        "category": "order_status_delay",
+        "content": "your family members/neighbors/security guards for the order package? 2/2 ^AP"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_002",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Interaction appropriately prioritized and escalated to human specialist per policy."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_003",
+    "test_id": "GOLDEN_003",
+    "difficulty": "routine",
+    "customer_query": "hmmm well next day delivery didn\u2019t arrive Fri, or Sat, not even Sunday.... where is my order??????",
+    "thread_context": "None (opening turn)",
+    "agent_response": "Hello! I understand your concern, Rebecca. Have we missed the date promised in your order confirmation e-mail? We'd love to help.",
+    "escalated": false,
+    "escalate_reason": "Autonomous handling approved: High confidence (85.00%) in intent 'order_status_delay' backed by 3 qualified grounding precedent(s).",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1016387_1016385",
+        "category": "order_status_delay",
+        "content": "I understand your concern, Rebecca. Have we missed the date promised in your order confirmation e-mail? We'd love to help. ^SK"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1100451_1100453",
+        "category": "order_status_delay",
+        "content": "We're sorry for the delays! During this busy time of year, some deliveries may take slightly longer than usual. You can learn more about extended delivery dates here: https://t.co/QpTVmF2VLh ^ZW"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1052385_1052383",
+        "category": "order_status_delay",
+        "content": "your family members/neighbors/security guards for the order package? 2/2 ^AP"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_003",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 4,
+      "overall_score": 4.75,
+      "passed": true,
+      "critique": "Grounded cleanly in precedent with empathetic tone and clear guidance."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_004",
+    "test_id": "GOLDEN_004",
+    "difficulty": "routine",
+    "customer_query": "What the heck Where is my package exactly?? https://t.co/KGA62wmmHb",
+    "thread_context": "None (opening turn)",
+    "agent_response": "Hello! I'm sorry to see this tracking error! We'd like to take a closer look at the order, and contact the carrier on your behalf. Please reach us via phone or chat here: https://t.co/EKXRLsnxJu",
+    "escalated": false,
+    "escalate_reason": "Autonomous handling approved: High confidence (85.00%) in intent 'order_status_delay' backed by 3 qualified grounding precedent(s).",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1041814_1041812",
+        "category": "order_status_delay",
+        "content": "I'm sorry to see this tracking error! We'd like to take a closer look at the order, and contact the carrier on your behalf. Please reach us via phone or chat here: https://t.co/EKXRLsnxJu ^JS"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1002197_1002196",
+        "category": "order_status_delay",
+        "content": "Terribly sorry for the frustration, Ahsan! What's the updated tracking information state here: https://t.co/Y5jpI9gRhE"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1108320_1108318",
+        "category": "order_status_delay",
+        "content": "Hello, Ayat! Could you please tell me who the carrier for your package is? We're here to help! https://t.co/Y5jpI9gRhE ^MW"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_004",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Grounded cleanly in precedent with empathetic tone and clear guidance."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_005",
+    "test_id": "GOLDEN_005",
+    "difficulty": "routine",
+    "customer_query": "my package says delivered but never got it. Where is my package !!!!",
+    "thread_context": "None (opening turn)",
+    "agent_response": "Hello! Thanks for reaching out to us. Here are some steps to try in situations like these: https://t.co/98Tpfm6ZUO",
+    "escalated": false,
+    "escalate_reason": "Autonomous handling approved: High confidence (90.00%) in intent 'delivery_not_received' backed by 3 qualified grounding precedent(s).",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1050778_1050777",
+        "category": "delivery_not_received",
+        "content": "Thanks for reaching out to us. Here are some steps to try in situations like these: https://t.co/98Tpfm6ZUO ^GG"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1112103_1112101",
+        "category": "delivery_not_received",
+        "content": "Just in case, have you checked your mailbox? Please also try these steps and keep us posted: https://t.co/8W0piplqfc ^BH"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1201296_1201295",
+        "category": "delivery_not_received",
+        "content": "I'm sorry you've not received your parcel. Please check our help page here for further guidance: https://t.co/atcI04KgVD ^MW"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_005",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Grounded cleanly in precedent with empathetic tone and clear guidance."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_006",
+    "test_id": "GOLDEN_006",
+    "difficulty": "routine",
+    "customer_query": "Dear , why does it say that my order was delivered and signed by me when I wasn't even home :-/ Where IS my order? #unhappy",
+    "thread_context": "None (opening turn)",
+    "agent_response": "Hello! your family members/neighbors/security guards for the order package? 2/2",
+    "escalated": false,
+    "escalate_reason": "Autonomous handling approved: High confidence (85.00%) in intent 'order_status_delay' backed by 3 qualified grounding precedent(s).",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1052385_1052383",
+        "category": "order_status_delay",
+        "content": "your family members/neighbors/security guards for the order package? 2/2 ^AP"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1052385_1052387",
+        "category": "order_status_delay",
+        "content": "I understand your concern for the order. Could you let us know if you've checked with 1/2 ^AP"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1089784_1089785",
+        "category": "order_status_delay",
+        "content": "That's unusual, kindly connect with our support team here: https://t.co/R3EfhzgU8B. We'll look into it. 1/2 ^PS"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_006",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 4,
+      "overall_score": 4.75,
+      "passed": true,
+      "critique": "Grounded cleanly in precedent with empathetic tone and clear guidance."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_007",
+    "test_id": "GOLDEN_007",
+    "difficulty": "routine",
+    "customer_query": "Dear , why does it say that my order was delivered and signed by me when I wasn't even home :-/ Where IS my order? #unhappy",
+    "thread_context": "None (opening turn)",
+    "agent_response": "Hello! your family members/neighbors/security guards for the order package? 2/2",
+    "escalated": false,
+    "escalate_reason": "Autonomous handling approved: High confidence (85.00%) in intent 'order_status_delay' backed by 3 qualified grounding precedent(s).",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1052385_1052383",
+        "category": "order_status_delay",
+        "content": "your family members/neighbors/security guards for the order package? 2/2 ^AP"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1052385_1052387",
+        "category": "order_status_delay",
+        "content": "I understand your concern for the order. Could you let us know if you've checked with 1/2 ^AP"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1089784_1089785",
+        "category": "order_status_delay",
+        "content": "That's unusual, kindly connect with our support team here: https://t.co/R3EfhzgU8B. We'll look into it. 1/2 ^PS"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_007",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 4,
+      "overall_score": 4.75,
+      "passed": true,
+      "critique": "Grounded cleanly in precedent with empathetic tone and clear guidance."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_008",
+    "test_id": "GOLDEN_008",
+    "difficulty": "routine",
+    "customer_query": "I\u2019ve ordered 2 items, both supposed to be delivered today but only 1 has turned up. Where is my 2nd item? I doubt the driver will come back.",
+    "thread_context": "[Customer]: Hi there, I\u2019ve been waiting for a parcel to be delivered all day. Any chance I could get an ETA??? | [AmazonHelp]: We deliver up until 21:00, Helene. Please let us know if the parcel doesn't arrive by then! I hope this helps! ^AD",
+    "agent_response": "Hello! What does the latest tracking say here? https://t.co/aaDyEz1VgE Please let us know!",
+    "escalated": true,
+    "escalate_reason": "Escalated: Intent confidence (0.85) is below operational threshold (0.65) or prediction is ambiguous.",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1053580_1053583",
+        "category": "order_status_delay",
+        "content": "What does the latest tracking say here? https://t.co/aaDyEz1VgE Please let us know! ^LL"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1041671_1041673",
+        "category": "order_status_delay",
+        "content": "Please provide us more information through the link that ^KB provided, we want to make sure your information is safe and so that a member of my team can look into this directly. Thank you for reaching out to us! We will keep you updated. ^EB"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1003655_1003658",
+        "category": "order_status_delay",
+        "content": "the phone. Rest assured, the package will be delivered by 8 PM if the order is out for delivery. 2/3 ^MA"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_008",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Interaction appropriately prioritized and escalated to human specialist per policy."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_009",
+    "test_id": "GOLDEN_009",
+    "difficulty": "routine",
+    "customer_query": "Desperate to go out but waiting in for a delivery from as I can\u2019t track my order &amp; time my outing accordingly. Poor.",
+    "thread_context": "None (opening turn)",
+    "agent_response": "Hello! We can deliver up to 9pm, normally sooner! You can nominate a 'safe place' if you're out: https://t.co/xCYAzCHfeU",
+    "escalated": false,
+    "escalate_reason": "Autonomous handling approved: High confidence (85.00%) in intent 'order_status_delay' backed by 2 qualified grounding precedent(s).",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1001034_1001032",
+        "category": "order_status_delay",
+        "content": "We can deliver up to 9pm, normally sooner! You can nominate a 'safe place' if you're out: https://t.co/xCYAzCHfeU ^RL"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1122802_1122801",
+        "category": "order_status_delay",
+        "content": "glad to help you. Please don\u2019t provide your order details as our Twitter page is visible to the public. 2/2 ^NS"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1028201_1028200",
+        "category": "order_status_delay",
+        "content": "Two-Day Shipping refers to the time taken to arrive, in business days, once shipped. Details here: https://t.co/DmjbiDQX9v ^BV"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_009",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Grounded cleanly in precedent with empathetic tone and clear guidance."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_010",
+    "test_id": "GOLDEN_010",
+    "difficulty": "routine",
+    "customer_query": "Oh shoot, apologies. I misread the last message. The carrier is Canada Post. Tracking number: __credit_card__",
+    "thread_context": "[Customer]: Hi , I made an order with Prime on Oct 9 and I still haven't received it. It was supposed to be delivered on Oct 12 but it hasnt | [AmazonHelp]: I'm sorry for the wait! What was the most recent tracking scan? You can check here: https://t.co/PyACxvY8Qo ^BH | [Customer]: The last tracking scan was a departure scan at 1:56PM on the 12th. It hasn't been updated since. | [AmazonHelp]: Who was the listed carrier for this order? You can find this information through the link BH provided. ^WM | [Customer]: It was sold and shipped by \"https://t.co/xcYIc5gBpI, Inc.\" And prime eligible. | [AmazonHelp]: Thanks! To find the carrier, click Track Package next to the order: https://t.co/PyACxvY8Qo. It'll be near the tracking number. ^MB",
+    "agent_response": "Hello! Have you contacted the carrier yet to investigate this delivery, Quin? If so, what was advised? Keep us posted!",
+    "escalated": false,
+    "escalate_reason": "Autonomous handling approved: High confidence (85.00%) in intent 'order_status_delay' backed by 3 qualified grounding precedent(s).",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1019615_1019616",
+        "category": "order_status_delay",
+        "content": "Have you contacted the carrier yet to investigate this delivery, Quin? If so, what was advised? Keep us posted! ^FR"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1079445_1079447",
+        "category": "order_status_delay",
+        "content": "We'd like to look into this further. Please send us the order details here: https://t.co/A8BOVnCpSy ^BH"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1037606_1037608",
+        "category": "order_status_delay",
+        "content": "Please don't provide your tracking details, as we consider it to be personal info. Our page is visible to the public. 2/2 ^PS"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_010",
+      "grounding_score": 5,
+      "correctness_score": 3,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 4.5,
+      "passed": false,
+      "critique": "Tracking inquiry lacked tracking path."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_011",
+    "test_id": "GOLDEN_011",
+    "difficulty": "routine",
+    "customer_query": "Expected delivery date is 20th October. Tracking number 709143123267",
+    "thread_context": "[Customer]: my consignment has reached the city on 14th. I was neither updated nor delivered. Pls look into the concern | [AmazonHelp]: estimated delivery date of your order has passed? 2/2 ^HD",
+    "agent_response": "Hello! Sorry to know that. Kindly connect with our support team here: https://t.co/R3EfhzgU8B. We'll look into it. 1/2",
+    "escalated": false,
+    "escalate_reason": "Autonomous handling approved: High confidence (85.00%) in intent 'order_status_delay' backed by 3 qualified grounding precedent(s).",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1037606_1037609",
+        "category": "order_status_delay",
+        "content": "Sorry to know that. Kindly connect with our support team here: https://t.co/R3EfhzgU8B. We'll look into it. 1/2 ^PS"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1037606_1037608",
+        "category": "order_status_delay",
+        "content": "Please don't provide your tracking details, as we consider it to be personal info. Our page is visible to the public. 2/2 ^PS"
+      },
+      {
+        "doc_id": "POLICY_ORDER_STATUS_DELAY",
+        "category": "order_status_delay",
+        "content": "POLICY GUIDANCE: Verify estimated delivery date from order confirmation, direct to Your Orders tracking link, and caution against sharing order IDs publicly.\nSCOPE: Customer checking location, tracking number, or arrival ETA of an active order, or reporting delays past the estimated delivery date."
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_011",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Grounded cleanly in precedent with empathetic tone and clear guidance."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_012",
+    "test_id": "GOLDEN_012",
+    "difficulty": "routine",
+    "customer_query": "Expected delivery date is 20th October. Tracking number 709143123267",
+    "thread_context": "[Customer]: my consignment has reached the city on 14th. I was neither updated nor delivered. Pls look into the concern | [AmazonHelp]: estimated delivery date of your order has passed? 2/2 ^HD",
+    "agent_response": "Hello! Sorry to know that. Kindly connect with our support team here: https://t.co/R3EfhzgU8B. We'll look into it. 1/2",
+    "escalated": false,
+    "escalate_reason": "Autonomous handling approved: High confidence (85.00%) in intent 'order_status_delay' backed by 3 qualified grounding precedent(s).",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1037606_1037609",
+        "category": "order_status_delay",
+        "content": "Sorry to know that. Kindly connect with our support team here: https://t.co/R3EfhzgU8B. We'll look into it. 1/2 ^PS"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1037606_1037608",
+        "category": "order_status_delay",
+        "content": "Please don't provide your tracking details, as we consider it to be personal info. Our page is visible to the public. 2/2 ^PS"
+      },
+      {
+        "doc_id": "POLICY_ORDER_STATUS_DELAY",
+        "category": "order_status_delay",
+        "content": "POLICY GUIDANCE: Verify estimated delivery date from order confirmation, direct to Your Orders tracking link, and caution against sharing order IDs publicly.\nSCOPE: Customer checking location, tracking number, or arrival ETA of an active order, or reporting delays past the estimated delivery date."
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_012",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Grounded cleanly in precedent with empathetic tone and clear guidance."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_013",
+    "test_id": "GOLDEN_015",
+    "difficulty": "ambiguous",
+    "customer_query": "My package from was supposed to arrive today. Now it not coming till Friday. Why the hell do I pay for prime. Doesn't do shit.",
+    "thread_context": "None (opening turn)",
+    "agent_response": "Hello! Oh no, Blair! Can you confirm the delivery date that was provided in your order confirmation email?",
+    "escalated": false,
+    "escalate_reason": "Autonomous handling approved: High confidence (90.00%) in intent 'order_status_delay' backed by 3 qualified grounding precedent(s).",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_10660_10659",
+        "category": "order_status_delay",
+        "content": "Oh no, Blair! Can you confirm the delivery date that was provided in your order confirmation email? ^LA"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1102604_1102606",
+        "category": "order_status_delay",
+        "content": "Please allow 1-2 days for your package to arrive. Of it doesn\u00b4t arrive by then call us here: https://t.co/hApLpMlfHN ^LH"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1119591_1119590",
+        "category": "order_status_delay",
+        "content": "I'm sorry for the wait! Which carrier is assigned for delivery? Does the tracking on their website give any clues or insight? ^MV"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_015",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Grounded cleanly in precedent with empathetic tone and clear guidance."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_014",
+    "test_id": "GOLDEN_016",
+    "difficulty": "ambiguous",
+    "customer_query": "Yes :( my emails says it was supposed to arrive yesterday and it said \u201cout for delivery\u201d and now it says on my app expected delivery is the 27th which I need the stuff I ordered for tomorrow",
+    "thread_context": "[Customer]: Why do I pay for prime if they\u2019re still taking 6 days to ship a prime item to me??? Good to know I\u2019m wasting my money :-) | [AmazonHelp]: Oh no! I'm sorry for the long wait time for delivery! We never want to let you down. Just to clarify, are we missing the expected delivery date given in your order confirmation e-mail? ^AL",
+    "agent_response": "Hello! While delays are rare, they can occur. If you haven't received your item by 8:00PM on the 27th, please let us know. I'm sorry for any inconvenience this may cause.",
+    "escalated": false,
+    "escalate_reason": "Autonomous handling approved: High confidence (90.00%) in intent 'order_status_delay' backed by 3 qualified grounding precedent(s).",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1100502_1100504",
+        "category": "order_status_delay",
+        "content": "While delays are rare, they can occur. If you haven't received your item by 8:00PM on the 27th, please let us know. I'm sorry for any inconvenience this may cause. ^AC"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1119591_1119590",
+        "category": "order_status_delay",
+        "content": "I'm sorry for the wait! Which carrier is assigned for delivery? Does the tracking on their website give any clues or insight? ^MV"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_10660_10659",
+        "category": "order_status_delay",
+        "content": "Oh no, Blair! Can you confirm the delivery date that was provided in your order confirmation email? ^LA"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_016",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Grounded cleanly in precedent with empathetic tone and clear guidance."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_015",
+    "test_id": "GOLDEN_017",
+    "difficulty": "ambiguous",
+    "customer_query": "my order was supposed to arrive by 25th sep. Item not delivered yet. After so many calls now they say the item is lost.",
+    "thread_context": "None (opening turn)",
+    "agent_response": "Hello! We're sorry about your lost order, Rohit. In this case, I'd suggest you to place a fresh order and we'll get it to you.",
+    "escalated": false,
+    "escalate_reason": "Autonomous handling approved: High confidence (90.00%) in intent 'order_status_delay' backed by 3 qualified grounding precedent(s).",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1107280_1107279",
+        "category": "order_status_delay",
+        "content": "We're sorry about your lost order, Rohit. In this case, I'd suggest you to place a fresh order and we'll get it to you. ^HT"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1102604_1102606",
+        "category": "order_status_delay",
+        "content": "Please allow 1-2 days for your package to arrive. Of it doesn\u00b4t arrive by then call us here: https://t.co/hApLpMlfHN ^LH"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1043727_1043726",
+        "category": "order_status_delay",
+        "content": "I'm sorry for the delay. Have you reported this to our support team here: https://t.co/2t6DQoUmNZ? ^RW"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_017",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Grounded cleanly in precedent with empathetic tone and clear guidance."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_016",
+    "test_id": "GOLDEN_018",
+    "difficulty": "ambiguous",
+    "customer_query": "my halloween costume was supposed to arrive today whERE IS IT",
+    "thread_context": "None (opening turn)",
+    "agent_response": "Hello! I'm sorry for the wait! Which carrier is assigned for delivery? Does the tracking on their website give any clues or insight?",
+    "escalated": false,
+    "escalate_reason": "Autonomous handling approved: High confidence (90.00%) in intent 'order_status_delay' backed by 3 qualified grounding precedent(s).",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1119591_1119590",
+        "category": "order_status_delay",
+        "content": "I'm sorry for the wait! Which carrier is assigned for delivery? Does the tracking on their website give any clues or insight? ^MV"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1102604_1102606",
+        "category": "order_status_delay",
+        "content": "Please allow 1-2 days for your package to arrive. Of it doesn\u00b4t arrive by then call us here: https://t.co/hApLpMlfHN ^LH"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_10660_10659",
+        "category": "order_status_delay",
+        "content": "Oh no, Blair! Can you confirm the delivery date that was provided in your order confirmation email? ^LA"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_018",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 4,
+      "overall_score": 4.75,
+      "passed": true,
+      "critique": "Grounded cleanly in precedent with empathetic tone and clear guidance."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_017",
+    "test_id": "GOLDEN_019",
+    "difficulty": "ambiguous",
+    "customer_query": "my order was supposed to arrive yesterday by 8pm it has not arrived. now it appears you have rescheduled it for today. unhappy!!",
+    "thread_context": "None (opening turn)",
+    "agent_response": "Hello! While delays are rare, they can occur. If you haven't received your item by 8:00PM on the 27th, please let us know. I'm sorry for any inconvenience this may cause.",
+    "escalated": false,
+    "escalate_reason": "Autonomous handling approved: High confidence (90.00%) in intent 'order_status_delay' backed by 3 qualified grounding precedent(s).",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1100502_1100504",
+        "category": "order_status_delay",
+        "content": "While delays are rare, they can occur. If you haven't received your item by 8:00PM on the 27th, please let us know. I'm sorry for any inconvenience this may cause. ^AC"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_10660_10659",
+        "category": "order_status_delay",
+        "content": "Oh no, Blair! Can you confirm the delivery date that was provided in your order confirmation email? ^LA"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1102604_1102606",
+        "category": "order_status_delay",
+        "content": "Please allow 1-2 days for your package to arrive. Of it doesn\u00b4t arrive by then call us here: https://t.co/hApLpMlfHN ^LH"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_019",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Grounded cleanly in precedent with empathetic tone and clear guidance."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_018",
+    "test_id": "GOLDEN_033",
+    "difficulty": "ambiguous",
+    "customer_query": "this whole take a pic of your package on the porch is great... except they don\u2019t hide the packages now so guess what... stolen packages \ud83d\ude21\ud83d\ude21",
+    "thread_context": "None (opening turn)",
+    "agent_response": "Hello! I'm so sorry you haven't received your order! Have you had a chance to speak with us through phone or chat?",
+    "escalated": false,
+    "escalate_reason": "Autonomous handling approved: High confidence (85.00%) in intent 'delivery_not_received' backed by 2 qualified grounding precedent(s).",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1257642_1257641",
+        "category": "delivery_not_received",
+        "content": "I'm so sorry you haven't received your order! Have you had a chance to speak with us through phone or chat? ^HS"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_147250_147248",
+        "category": "delivery_not_received",
+        "content": "As this has happened before we would like to personally take a closer look into this for you, please click on the following link: https://t.co/tkLCr7DNil.^SM"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_2260544_2260543",
+        "category": "delivery_not_received",
+        "content": "Oh no! This is not the service we want for our customers! I'm very sorry your packages did not get delivered. Could you let us know who the carrier of the packages were? ^HM"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_033",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Grounded cleanly in precedent with empathetic tone and clear guidance."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_019",
+    "test_id": "GOLDEN_034",
+    "difficulty": "ambiguous",
+    "customer_query": "#whereischadspackage it says it's here... it's not. on his porch? no. in the mailbox? nope. where is it? not here.",
+    "thread_context": "None (opening turn)",
+    "agent_response": "Hello! I'm sorry to hear you can't locate your order. Here's some tips for locating a missing package: https://t.co/rEAlm6RX4k",
+    "escalated": false,
+    "escalate_reason": "Autonomous handling approved: High confidence (85.00%) in intent 'delivery_not_received' backed by 3 qualified grounding precedent(s).",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1386487_1386485",
+        "category": "delivery_not_received",
+        "content": "I'm sorry to hear you can't locate your order. Here's some tips for locating a missing package: https://t.co/rEAlm6RX4k ^AN"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1292099_1292097",
+        "category": "delivery_not_received",
+        "content": "Oh no! Have you tried these useful tips here:https://t.co/LejNOLfZUd. Let us know if this helps. We're here for you! ^SK"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1110746_1110745",
+        "category": "delivery_not_received",
+        "content": "I'm sorry for any concern! Can you please try these steps and let us know if they help: https://t.co/pJnMOH1ykX? ^WT"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_034",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Grounded cleanly in precedent with empathetic tone and clear guidance."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_020",
+    "test_id": "GOLDEN_035",
+    "difficulty": "ambiguous",
+    "customer_query": "Got an package stolen. I even got a great picture of it taken by the delivery person just sitting there on the porch, ready to be stolen. https://t.co/KBTrnuF64q",
+    "thread_context": "None (opening turn)",
+    "agent_response": "Hello! I'm so sorry you haven't received your order! Have you had a chance to speak with us through phone or chat?",
+    "escalated": false,
+    "escalate_reason": "Autonomous handling approved: High confidence (85.00%) in intent 'delivery_not_received' backed by 1 qualified grounding precedent(s).",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1257642_1257641",
+        "category": "delivery_not_received",
+        "content": "I'm so sorry you haven't received your order! Have you had a chance to speak with us through phone or chat? ^HS"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_147250_147248",
+        "category": "delivery_not_received",
+        "content": "As this has happened before we would like to personally take a closer look into this for you, please click on the following link: https://t.co/tkLCr7DNil.^SM"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1515289_1515287",
+        "category": "delivery_not_received",
+        "content": "Your parcel may have been misplaced, try following these steps: https://t.co/uRLnan0F2A Let us know when you find it. ^DA"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_035",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Grounded cleanly in precedent with empathetic tone and clear guidance."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_021",
+    "test_id": "GOLDEN_083",
+    "difficulty": "high_risk",
+    "customer_query": "Tell customer to open order in front of ur delivery boy. Let him verify. This will ensure zero fraud claims by conmen.",
+    "thread_context": "None (opening turn)",
+    "agent_response": "Hello! We'll record your comments as feedback to the relevant team for improvements.",
+    "escalated": true,
+    "escalate_reason": "Escalated: Intent 'carrier_physical_delivery_issue' is categorized as high risk and requires mandatory human handling per policy.",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1005066_1005064",
+        "category": "carrier_physical_delivery_issue",
+        "content": "We'll record your comments as feedback to the relevant team for improvements. ^MJ"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1109449_1109448",
+        "category": "carrier_physical_delivery_issue",
+        "content": "I'll forward your comments as feedback to the relevant team as feedback. ^MJ"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1186532_1186530",
+        "category": "carrier_physical_delivery_issue",
+        "content": "If you've shared your details in the link provided earlier, you should've received an email. Kindly check your emails. ^NR"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_083",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Interaction appropriately prioritized and escalated to human specialist per policy."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_022",
+    "test_id": "GOLDEN_084",
+    "difficulty": "high_risk",
+    "customer_query": "Thank u. I have read how 2 con-customers cheated Amazon of 50+70 lakhs by fraud claims of receiving empty boxes. Hope my suggestion helps.",
+    "thread_context": "[Customer]: Tell customer to open order in front of ur delivery boy. Let him verify. This will ensure zero fraud claims by conmen. | [AmazonHelp]: We'll record your comments as feedback to the relevant team for improvements. ^MJ",
+    "agent_response": "Hello! Hmm. Are you receiving some sort of error while trying to read in the terminal? What specific issues are you running into?",
+    "escalated": true,
+    "escalate_reason": "Escalated: Query intent is unclassifiable or unclear ('other_unclear'); human triage required.",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1004360_1004359",
+        "category": "other_unclear",
+        "content": "Hmm. Are you receiving some sort of error while trying to read in the terminal? What specific issues are you running into? ^JZ"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1004513_1004510",
+        "category": "other_unclear",
+        "content": "We apologize that you have received an empty package. May I know if you have reported this to our support team, if no please do it through : https://t.co/2t6DQoUmNZ so that we can do the needful? ^PR"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1001026_1001025",
+        "category": "other_unclear",
+        "content": "We value customer feedback such as yours as it helps us continue to improve the service and selection we provide. (2/2) ^JS"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_084",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Interaction appropriately prioritized and escalated to human specialist per policy."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_023",
+    "test_id": "GOLDEN_085",
+    "difficulty": "high_risk",
+    "customer_query": "you have now stooped to committing fraud and forgery now. I didnt recieve the product but its marked as delivered https://t.co/hegpyvOTRp",
+    "thread_context": "None (opening turn)",
+    "agent_response": "Hello! We apologize that you have received an empty package. May I know if you have reported this to our support team, if no please do it through : https://t.co/2t6DQoUmNZ so that we can do the needful?",
+    "escalated": true,
+    "escalate_reason": "Escalated: Query intent is unclassifiable or unclear ('other_unclear'); human triage required.",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1004513_1004510",
+        "category": "other_unclear",
+        "content": "We apologize that you have received an empty package. May I know if you have reported this to our support team, if no please do it through : https://t.co/2t6DQoUmNZ so that we can do the needful? ^PR"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1248712_1248714",
+        "category": "order_cancellation_modification",
+        "content": "Apologies for the trouble with the delivery of your order, Jayant. I'd like to take a closer look. 1/3 ^HD"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1004563_1004562",
+        "category": "other_unclear",
+        "content": "I'm sorry to hear this. What options or information did we provide when you spoke with us? ^GR"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_085",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Interaction appropriately prioritized and escalated to human specialist per policy."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_024",
+    "test_id": "GOLDEN_086",
+    "difficulty": "high_risk",
+    "customer_query": "Please dont direct me to your customer service. I need writtn explaination here s 2 y dis fraud ws committed failing which I will file a FIR",
+    "thread_context": "[Customer]: you have now stooped to committing fraud and forgery now. I didnt recieve the product but its marked as delivered https://t.co/hegpyvOTRp | [AmazonHelp]: Sorry for the incorrect tracking update. Please contact us here: https://t.co/vlvfJr4nN9 and we'll help you with this. ^SQ",
+    "agent_response": "Hello! In case, you don't our email, please write to us from here: https://t.co/cQVomR1pWz. [3/3]",
+    "escalated": true,
+    "escalate_reason": "Escalated: Query intent is unclassifiable or unclear ('other_unclear'); human triage required.",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1051900_1051901",
+        "category": "returns_refunds",
+        "content": "In case, you don't our email, please write to us from here: https://t.co/cQVomR1pWz. [3/3] ^HA"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1051900_1051902",
+        "category": "returns_refunds",
+        "content": "received an email from social media team. You may check for it here: https://t.co/8DAc10S7ww. [2/3] ^HA"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1051900_1051903",
+        "category": "returns_refunds",
+        "content": "Sorry about the stretch. As you've mentioned that you've shared the details, you might have [1/3] ^HA"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_086",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Interaction appropriately prioritized and escalated to human specialist per policy."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_025",
+    "test_id": "GOLDEN_087",
+    "difficulty": "high_risk",
+    "customer_query": "Please dont direct me to your customer service. I need writtn explaination here s 2 y dis fraud ws committed failing which I will file a FIR",
+    "thread_context": "[Customer]: you have now stooped to committing fraud and forgery now. I didnt recieve the product but its marked as delivered https://t.co/hegpyvOTRp | [AmazonHelp]: Sorry for the incorrect tracking update. Please contact us here: https://t.co/vlvfJr4nN9 and we'll help you with this. ^SQ",
+    "agent_response": "Hello! In case, you don't our email, please write to us from here: https://t.co/cQVomR1pWz. [3/3]",
+    "escalated": true,
+    "escalate_reason": "Escalated: Query intent is unclassifiable or unclear ('other_unclear'); human triage required.",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1051900_1051901",
+        "category": "returns_refunds",
+        "content": "In case, you don't our email, please write to us from here: https://t.co/cQVomR1pWz. [3/3] ^HA"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1051900_1051902",
+        "category": "returns_refunds",
+        "content": "received an email from social media team. You may check for it here: https://t.co/8DAc10S7ww. [2/3] ^HA"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1051900_1051903",
+        "category": "returns_refunds",
+        "content": "Sorry about the stretch. As you've mentioned that you've shared the details, you might have [1/3] ^HA"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_087",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Interaction appropriately prioritized and escalated to human specialist per policy."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_026",
+    "test_id": "GOLDEN_088",
+    "difficulty": "high_risk",
+    "customer_query": "Why u guys r duping loyal customers &amp; doing fraud by selling ipad 2017 but showing images of ipad pro? https://t.co/POpH11rS8T",
+    "thread_context": "None (opening turn)",
+    "agent_response": "Hello! to miss the estimate as mentioned here: https://t.co/ykWpCt0ely ? (2/2)",
+    "escalated": true,
+    "escalate_reason": "Escalated: Query intent is unclassifiable or unclear ('other_unclear'); human triage required.",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1004371_1004373",
+        "category": "other_unclear",
+        "content": "to miss the estimate as mentioned here: https://t.co/ykWpCt0ely ? (2/2) ^KA"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1001013_1001014",
+        "category": "other_unclear",
+        "content": "seller to seller. Request you to refer the link that was provided earlier for more insides on this. 2/2 ^NK"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1004371_1004370",
+        "category": "other_unclear",
+        "content": "The packages are dispatched and moved according to the delivery estimate. Did we happen (1/2) ^KA"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_088",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Interaction appropriately prioritized and escalated to human specialist per policy."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_027",
+    "test_id": "GOLDEN_020",
+    "difficulty": "multi_issue",
+    "customer_query": "so angry that for the second time a 'next day delivery' has been delayed. What is the point of my Prime membership at this rate",
+    "thread_context": "None (opening turn)",
+    "agent_response": "Hello! I'm sorry for the wait, Darryl. Have we provided a reason for the delay or an updated delivery date?",
+    "escalated": true,
+    "escalate_reason": "Escalated: Intent confidence (0.85) is below operational threshold (0.65) or prediction is ambiguous.",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1093315_1093313",
+        "category": "prime_subscription_benefits",
+        "content": "I'm sorry for the wait, Darryl. Have we provided a reason for the delay or an updated delivery date? ^EA"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1058849_1058847",
+        "category": "prime_subscription_benefits",
+        "content": "Sorry for the wait! Have we missed the delivery date provided during checkout/your confirmation e-mail? ^BG"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1093314_1093316",
+        "category": "prime_subscription_benefits",
+        "content": "again, we are sorry to about that, delays do happen from time to time for unforeseen reasons. ^AS"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_020",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Interaction appropriately prioritized and escalated to human specialist per policy."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_028",
+    "test_id": "GOLDEN_021",
+    "difficulty": "multi_issue",
+    "customer_query": "No I've not even ordered it yet - I just wondered why all of the sudden I'm not getting Next Day Delivery - why would my order be delayed by two days?",
+    "thread_context": "[Customer]: why all of the sudden are my orders not coming next day delivery now? #PrimeCustomer | [AmazonHelp]: I'm sorry for the frustration! Without giving any personal/account information, are you having an issue with a current order? We're available to assist. ^SJ",
+    "agent_response": "Hello! We're sorry for the delays! During this busy time of year, some deliveries may take slightly longer than usual. You can learn more about extended delivery dates here: https://t.co/QpTVmF2VLh",
+    "escalated": false,
+    "escalate_reason": "Autonomous handling approved: High confidence (80.00%) in intent 'order_status_delay' backed by 2 qualified grounding precedent(s).",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1100451_1100453",
+        "category": "order_status_delay",
+        "content": "We're sorry for the delays! During this busy time of year, some deliveries may take slightly longer than usual. You can learn more about extended delivery dates here: https://t.co/QpTVmF2VLh ^ZW"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1016387_1016385",
+        "category": "order_status_delay",
+        "content": "I understand your concern, Rebecca. Have we missed the date promised in your order confirmation e-mail? We'd love to help. ^SK"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1075333_1075331",
+        "category": "order_status_delay",
+        "content": "So sorry for this! We are here to help! Have we missed the delivery date provided in you order confirmation email? ^AD"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_021",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Grounded cleanly in precedent with empathetic tone and clear guidance."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_029",
+    "test_id": "GOLDEN_022",
+    "difficulty": "multi_issue",
+    "customer_query": "me: orders a gift for someone with one day shipping because I needed it today amazon: haha it's delayed, fucker",
+    "thread_context": "None (opening turn)",
+    "agent_response": "Hello! One-Day refers to the travel time once it ships. Some items have additional processing, we include that into the date.",
+    "escalated": false,
+    "escalate_reason": "Autonomous handling approved: High confidence (80.00%) in intent 'order_status_delay' backed by 3 qualified grounding precedent(s).",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1110258_1110260",
+        "category": "order_status_delay",
+        "content": "One-Day refers to the travel time once it ships. Some items have additional processing, we include that into the date. ^VB"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1110771_1110772",
+        "category": "order_status_delay",
+        "content": "Has your package passed the delivery date we provided in your initial confirmation email: https://t.co/4dVNHVec2D? ^TN"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1116566_1116568",
+        "category": "order_status_delay",
+        "content": "I'd like to have a member of our team escalate this for you. Please send us your details here: https://t.co/0vbENILlOo ^GM"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_022",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Grounded cleanly in precedent with empathetic tone and clear guidance."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_030",
+    "test_id": "GOLDEN_023",
+    "difficulty": "multi_issue",
+    "customer_query": "All next day prime deliveries: 3 wks ago - delayed 48hrs, last week \"attempted\"/never delivered - this week, left outside without ringing",
+    "thread_context": "[Customer]: screwing up another delivery, 3 weeks in a row. Glad to see my previous complains have been listened to #sarcasm #fail | [AmazonHelp]: Hello- Without providing personal info can you explain further what has happened your delivery? ^NV",
+    "agent_response": "Hello! Oh no! I would like to have someone look at this directly with you. Please reach out here: https://t.co/xrxTzRl8vC",
+    "escalated": false,
+    "escalate_reason": "Autonomous handling approved: High confidence (80.00%) in intent 'order_status_delay' backed by 1 qualified grounding precedent(s).",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1724911_1724912",
+        "category": "order_status_delay",
+        "content": "Oh no! I would like to have someone look at this directly with you. Please reach out here: https://t.co/xrxTzRl8vC ^LA"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1100451_1100453",
+        "category": "order_status_delay",
+        "content": "We're sorry for the delays! During this busy time of year, some deliveries may take slightly longer than usual. You can learn more about extended delivery dates here: https://t.co/QpTVmF2VLh ^ZW"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1043227_1043226",
+        "category": "order_status_delay",
+        "content": "Sorry to hear that. We'll be happy to look into that for you. Please reach out to us here: https://t.co/JzP7hlA23B ^RS"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_023",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Grounded cleanly in precedent with empathetic tone and clear guidance."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_031",
+    "test_id": "GOLDEN_169",
+    "difficulty": "low_signal",
+    "customer_query": "????????????",
+    "thread_context": "[Customer]: amazon prime refund received less. Please share the chat feature or arrange support. | [AmazonHelp]: Did you receive an e-mail that explains the refund? You can reach out to us via chat here: https://t.co/hApLpMlfHN ^WJ | [Customer]: Don't able to chat using this feature, please check. No in my bank statement the debit is 746 and credit is 686.",
+    "agent_response": "Thank you for contacting customer support. We are looking into your request. A support specialist will assist you shortly.",
+    "escalated": true,
+    "escalate_reason": "Escalated: Query intent is unclassifiable or unclear ('other_unclear'); human triage required.",
+    "retrieved_precedents": [],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_169",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Interaction appropriately prioritized and escalated to human specialist per policy."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_032",
+    "test_id": "GOLDEN_170",
+    "difficulty": "low_signal",
+    "customer_query": "link?",
+    "thread_context": "[Customer]: What do you do when Prime says one day delivery but doesn't actually deliver in one day? | [AmazonHelp]: When was the expected delivery date on your confirmation email? What does your tracking currently say: https://t.co/aaDyEz1VgE ^MI | [Customer]: Expected yesterday. Tracking says Out for delivery Arriving today. | [Customer]: One says shipping today, arriving today. | [AmazonHelp]: I am sorry to hear there has been a delay with your order, can I ask for you to contact our customer service team through the link below and we will be more than happy to assist you further. Thanks ^GA",
+    "agent_response": "Hello! Apologies for the wrong link, Oliver! Please reach us here: https://t.co/hApLpMlfHN for best assistance.",
+    "escalated": true,
+    "escalate_reason": "Escalated: Query intent is unclassifiable or unclear ('other_unclear'); human triage required.",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1001102_1001104",
+        "category": "other_unclear",
+        "content": "Apologies for the wrong link, Oliver! Please reach us here: https://t.co/hApLpMlfHN for best assistance. ^CS"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1300515_1300516",
+        "category": "other_unclear",
+        "content": "Of course not, Gaurav. Kindly write to us from the link provided above and we'll reach out to you. ^SA"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1001016_1001017",
+        "category": "other_unclear",
+        "content": "Have you referred to the link provided above that provides detailed info on the M.R.P? ^HA"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_170",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Interaction appropriately prioritized and escalated to human specialist per policy."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_033",
+    "test_id": "GOLDEN_042",
+    "difficulty": "angry_profane",
+    "customer_query": "Amazon can you fucking not? \"Delivered\" does not mean leave it in the sodding driveway where anyone can steal it!",
+    "thread_context": "None (opening turn)",
+    "agent_response": "Hello! I'm sorry to hear it was delivered like this! I can understand the concern. Was there any damage to the mask?",
+    "escalated": true,
+    "escalate_reason": "Escalated: Query intent is unclassifiable or unclear ('other_unclear'); human triage required.",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1021022_1021019",
+        "category": "carrier_physical_delivery_issue",
+        "content": "I'm sorry to hear it was delivered like this! I can understand the concern. Was there any damage to the mask? ^BH"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1190269_1190268",
+        "category": "carrier_physical_delivery_issue",
+        "content": "We'd love to look into this! Without posting account information, will you please provide to us the details of what is happening? ^RO"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1004509_1004508",
+        "category": "other_unclear",
+        "content": "I'm sorry your phone case hasn't arrived as expected. What was the original estimated delivery date provided here: https://t.co/Y5jpI9gRhE ? ^TH"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_042",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Interaction appropriately prioritized and escalated to human specialist per policy."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_034",
+    "test_id": "GOLDEN_129",
+    "difficulty": "angry_profane",
+    "customer_query": "why amazon key won\u2019t work in Chicago. Drivers rude, don\u2019t deliver to the right \ud83d\udeaa, won\u2019t shut gate after delivery. Don\u2019t trust them with access to our yard, much less int bldg. just now, driver threw package at me and said \u201cur momma\u201d.",
+    "thread_context": "None (opening turn)",
+    "agent_response": "Hello! I'm sorry you had this experience with us! We want to look at this order so provide your info here: https://t.co/8JgFK8uDcE",
+    "escalated": true,
+    "escalate_reason": "Escalated: Intent 'carrier_physical_delivery_issue' is categorized as high risk and requires mandatory human handling per policy.",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1178080_1178078",
+        "category": "carrier_physical_delivery_issue",
+        "content": "I'm sorry you had this experience with us! We want to look at this order so provide your info here: https://t.co/8JgFK8uDcE ^DD"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1076280_1076278",
+        "category": "carrier_physical_delivery_issue",
+        "content": "I'm so sorry for the frustration! Who is the carrier for the order? ^DD"
+      },
+      {
+        "doc_id": "POLICY_CARRIER_PHYSICAL_DELIVERY_ISSUE",
+        "category": "carrier_physical_delivery_issue",
+        "content": "POLICY GUIDANCE: Treat with high priority/apology, identify carrier, provide Safe Place and Delivery Instructions link, and route report to logistics operations.\nSCOPE: Complaints regarding driver conduct (reckless driving, gate left open, pet incidents, throwing packages, rude delivery agents)."
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_129",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Interaction appropriately prioritized and escalated to human specialist per policy."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  },
+  {
+    "sample_id": "VAL_035",
+    "test_id": "GOLDEN_130",
+    "difficulty": "angry_profane",
+    "customer_query": "I bought amazon basic iphone usb and it stopped working after 3 days.As it was working fine,i threw the box. Can i still return it",
+    "thread_context": "None (opening turn)",
+    "agent_response": "Hello! I'm sorry it was delivered like this. Send details about this order here so we can investigate: https://t.co/Ib0BlG9u9U",
+    "escalated": true,
+    "escalate_reason": "Escalated: Intent 'carrier_physical_delivery_issue' is categorized as high risk and requires mandatory human handling per policy.",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1101935_1101934",
+        "category": "carrier_physical_delivery_issue",
+        "content": "I'm sorry it was delivered like this. Send details about this order here so we can investigate: https://t.co/Ib0BlG9u9U ^CL"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1021022_1021019",
+        "category": "carrier_physical_delivery_issue",
+        "content": "I'm sorry to hear it was delivered like this! I can understand the concern. Was there any damage to the mask? ^BH"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1188559_1188561",
+        "category": "carrier_physical_delivery_issue",
+        "content": "We'll look into it. 2/2 ^SB"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_130",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Interaction appropriately prioritized and escalated to human specialist per policy."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    }
+  }
+]

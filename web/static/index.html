@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anchor • Customer Support Console</title>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            anchorNavy: '#131921',
+            anchorNavyLight: '#232f3e',
+            anchorOrange: '#FF9900',
+            anchorOrangeHover: '#F08804',
+            anchorOrangeActive: '#DF7C00',
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    /* Custom scrollbar for chat and reasoning panels */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D1D5DB;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #9CA3AF;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col antialiased selection:bg-amber-100 selection:text-amber-900">
+
+  <!-- TOP HEADER (Dark Navy #131921) -->
+  <header class="bg-anchorNavy text-white border-b border-gray-800 sticky top-0 z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between">
+      <!-- Wordmark & Tagline -->
+      <div class="flex items-center space-x-3.5">
+        <!-- Support Assistant Glyph -->
+        <div class="w-9 h-9 rounded-lg bg-gray-800/80 border border-gray-700/60 flex items-center justify-center text-anchorOrange shadow-inner">
+          <i data-lucide="headset" class="w-5 h-5 stroke-[2.2]"></i>
+        </div>
+        <div>
+          <div class="flex items-center space-x-2">
+            <span class="text-xl font-semibold tracking-tight text-white leading-none">Anchor</span>
+            <span class="text-[10px] uppercase font-mono tracking-wider px-1.5 py-0.5 rounded bg-gray-800 text-gray-300 border border-gray-700">Internal Console</span>
+          </div>
+          <p class="text-xs text-gray-400 font-normal mt-0.5 tracking-normal">Grounded answers. Honest escalation.</p>
+        </div>
+      </div>
+
+      <!-- Header Right: System status badge -->
+      <div class="hidden sm:flex items-center space-x-4 text-xs">
+        <div class="flex items-center space-x-2 px-2.5 py-1 rounded bg-gray-800/90 border border-gray-700 text-gray-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Pipeline: <strong class="text-white font-medium">Active (2,412 Precedents)</strong></span>
+        </div>
+        <div class="text-gray-400 text-[11px]">
+          <span>Decision Logic: <span class="text-gray-300">Calibrated Policy</span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTROLS & TEST SUITE BAR -->
+  <section class="bg-white border-b border-gray-200 py-3 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center space-x-3 flex-1 min-w-[280px]">
+        <label for="testCaseSelect" class="text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap flex items-center gap-1.5">
+          <i data-lucide="play-circle" class="w-3.5 h-3.5 text-gray-500"></i>
+          Run Test Query:
+        </label>
+        <div class="relative flex-1 max-w-md">
+          <select id="testCaseSelect" class="w-full text-xs bg-gray-50 border border-gray-300 rounded-md py-1.5 pl-3 pr-8 text-gray-700 focus:outline-none focus:ring-1 focus:ring-anchorOrange focus:border-anchorOrange transition cursor-pointer">
+            <option value="">-- Choose a pre-populated test case --</option>
+            <option value="order_status">1. Order Status Delay (5 days in 'preparing')</option>
+            <option value="damaged_item">2. Damaged / Defective Item (Shattered TV screen)</option>
+            <option value="account_security">3. Account Security & Fraud ($500 unauthorized gift card)</option>
+            <option value="refund_window">4. Return & Refund Window (Dress fit & label print)</option>
+            <option value="low_signal">5. Low-Signal Inquiry ('link??? what is this')</option>
+          </select>
+        </div>
+        <button id="loadTestBtn" class="text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium px-2.5 py-1.5 rounded-md border border-gray-300 transition flex items-center gap-1 cursor-pointer">
+          <span>Load</span>
+        </button>
+      </div>
+
+      <div class="flex items-center space-x-2">
+        <button id="resetConvBtn" class="text-xs bg-white hover:bg-gray-50 text-gray-700 font-medium px-3 py-1.5 rounded-md border border-gray-300 transition flex items-center gap-1.5 hover:text-rose-600 hover:border-rose-200 cursor-pointer">
+          <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+          <span>Reset Conversation</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN TWO-COLUMN CONTENT AREA -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 h-full items-start">
+
+      <!-- LEFT COLUMN: Conversation (~60% width -> 7 cols) -->
+      <section class="lg:col-span-7 flex flex-col bg-white border border-gray-200 rounded-xl shadow-xs overflow-hidden h-[740px]">
+        <!-- Column Header -->
+        <div class="px-5 py-3.5 border-b border-gray-200 bg-gray-50/70 flex items-center justify-between">
+          <div class="flex items-center space-x-2">
+            <i data-lucide="messages-square" class="w-4 h-4 text-gray-600"></i>
+            <h2 class="text-sm font-semibold text-gray-800">Customer Support Thread</h2>
+          </div>
+          <div id="threadCountBadge" class="text-[11px] font-mono text-gray-500 bg-white border border-gray-200 px-2 py-0.5 rounded-full">
+            0 turns
+          </div>
+        </div>
+
+        <!-- Scrollable Messages Container -->
+        <div id="chatMessages" class="flex-1 p-5 overflow-y-auto space-y-4 bg-[#FBFBFB]">
+          <!-- Initial Welcome Empty State -->
+          <div id="emptyChatState" class="h-full flex flex-col items-center justify-center text-center p-8 text-gray-500 my-auto">
+            <div class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 mb-3 border border-gray-200">
+              <i data-lucide="headset" class="w-6 h-6 stroke-[1.8] text-gray-500"></i>
+            </div>
+            <h3 class="text-sm font-semibold text-gray-700">Anchor Support Thread Ready</h3>
+            <p class="text-xs text-gray-500 max-w-sm mt-1.5">
+              Enter an inbound customer query below, or pick one of the 5 pre-populated test cases to see real-time classification, retrieval grounding, and escalation reasoning.
+            </p>
+          </div>
+        </div>
+
+        <!-- Input Area (Pinned to Bottom) -->
+        <div class="p-4 border-t border-gray-200 bg-white">
+          <form id="chatForm" class="flex items-end gap-2.5">
+            <div class="flex-1 relative">
+              <textarea
+                id="messageInput"
+                rows="2"
+                placeholder="Type a customer message..."
+                class="w-full text-sm bg-white border border-gray-300 rounded-lg p-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-anchorOrange focus:border-anchorOrange transition resize-none leading-relaxed"
+              ></textarea>
+              <div class="text-[10px] text-gray-400 mt-1 flex justify-between px-1">
+                <span>Press <strong>Enter</strong> to send, <strong>Shift+Enter</strong> for newline</span>
+                <span id="charCount">0 chars</span>
+              </div>
+            </div>
+
+            <!-- Primary Action: Signature Orange Send Button -->
+            <button
+              id="sendBtn"
+              type="submit"
+              class="h-[46px] px-5 bg-anchorOrange hover:bg-anchorOrangeHover active:bg-anchorOrangeActive text-gray-900 font-semibold text-sm rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-sm shrink-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed mb-5"
+            >
+              <span id="sendBtnText">Send</span>
+              <i id="sendBtnIcon" data-lucide="send" class="w-4 h-4 stroke-[2.2]"></i>
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- RIGHT COLUMN: Anchor's Reasoning (~40% width -> 5 cols) -->
+      <section class="lg:col-span-5 flex flex-col bg-white border border-gray-200 rounded-xl shadow-xs overflow-hidden h-[740px]">
+        <!-- Reasoning Column Header -->
+        <div class="px-5 py-3.5 border-b border-gray-200 bg-gray-50/70 flex items-center justify-between">
+          <div class="flex items-center space-x-2">
+            <div class="w-2 h-2 rounded-full bg-anchorOrange"></div>
+            <h2 class="text-sm font-semibold text-gray-800">Anchor's Reasoning</h2>
+          </div>
+          <span class="text-[11px] text-gray-500 font-medium">Why Anchor decided this</span>
+        </div>
+
+        <!-- Scrollable Reasoning Body -->
+        <div id="reasoningContent" class="flex-1 p-5 overflow-y-auto space-y-5 bg-white">
+          <!-- Default Empty Reasoning State -->
+          <div id="emptyReasoningState" class="h-full flex flex-col items-center justify-center text-center p-8 text-gray-400 my-auto">
+            <div class="w-12 h-12 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center text-gray-400 mb-3">
+              <i data-lucide="cpu" class="w-6 h-6 stroke-[1.8]"></i>
+            </div>
+            <h4 class="text-sm font-medium text-gray-600">No active reasoning telemetry</h4>
+            <p class="text-xs text-gray-400 mt-1 max-w-xs">
+              When a customer message is processed, Anchor will display predicted intent, confidence score, escalation policy checks, and grounding citations here.
+            </p>
+          </div>
+
+          <!-- Dynamic Telemetry Container (hidden until first message) -->
+          <div id="activeReasoning" class="hidden space-y-5">
+
+            <!-- 1. PREDICTED INTENT & CONFIDENCE -->
+            <div class="bg-gray-50/80 rounded-lg p-4 border border-gray-200">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-semibold uppercase tracking-wider text-gray-500 flex items-center gap-1.5">
+                  <i data-lucide="tag" class="w-3.5 h-3.5 text-gray-400"></i>
+                  Predicted Intent
+                </span>
+                <span id="confidencePill" class="text-xs font-mono font-medium px-2 py-0.5 rounded-full border">
+                  0.0%
+                </span>
+              </div>
+              
+              <div class="flex items-baseline justify-between">
+                <h3 id="predictedIntentText" class="text-base font-semibold text-gray-900 font-mono">
+                  --
+                </h3>
+              </div>
+
+              <!-- Visual Confidence Progress Bar -->
+              <div class="w-full bg-gray-200 rounded-full h-1.5 mt-3 overflow-hidden">
+                <div id="confidenceProgressBar" class="h-1.5 rounded-full transition-all duration-500" style="width: 0%"></div>
+              </div>
+              <div class="flex justify-between text-[10px] text-gray-400 mt-1 font-mono">
+                <span>0%</span>
+                <span>Threshold: 65%</span>
+                <span>100%</span>
+              </div>
+            </div>
+
+            <!-- 2. ESCALATION DECISION -->
+            <div class="rounded-lg p-4 border transition-colors" id="escalationCard">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-semibold uppercase tracking-wider text-gray-500 flex items-center gap-1.5">
+                  <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-gray-400"></i>
+                  Escalation Policy Decision
+                </span>
+                <span id="escalationBadge" class="text-xs font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wide border">
+                  --
+                </span>
+              </div>
+
+              <div class="mt-2.5 text-xs text-gray-700 bg-white/90 p-3 rounded border border-gray-200/80 leading-relaxed font-sans">
+                <span class="font-semibold text-gray-900 block mb-1">Policy Rationale:</span>
+                <p id="escalationReasonText" class="text-gray-600 italic">
+                  --
+                </p>
+              </div>
+            </div>
+
+            <!-- 3. GROUNDING SOURCES (Collapsible Precedents) -->
+            <div class="border border-gray-200 rounded-lg p-4 bg-gray-50/50">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center space-x-1.5">
+                  <i data-lucide="library" class="w-4 h-4 text-gray-500"></i>
+                  <h4 class="text-xs font-semibold uppercase tracking-wider text-gray-600">Grounding Precedents</h4>
+                </div>
+                <span id="groundingCount" class="text-[11px] font-mono text-gray-500 bg-gray-200/70 px-2 py-0.5 rounded-full">
+                  0 found
+                </span>
+              </div>
+
+              <!-- List of Precedents or Zero-Precedent Warning -->
+              <div id="groundingList" class="space-y-2.5">
+                <!-- Injected via JS -->
+              </div>
+            </div>
+
+            <!-- 4. SUGGESTED DRAFT (Visible if Escalated) -->
+            <div id="suggestedDraftSection" class="hidden border border-amber-300 bg-amber-50/60 rounded-lg p-4">
+              <div class="flex items-center space-x-2 text-amber-900 mb-2">
+                <i data-lucide="file-clock" class="w-4 h-4 text-amber-600"></i>
+                <h4 class="text-xs font-semibold uppercase tracking-wider">Anchor's suggested response (pending human review)</h4>
+              </div>
+              <p class="text-[11px] text-amber-700 mb-2">
+                This query was flagged for human escalation. The drafted response below is provided for specialist triage and approval:
+              </p>
+              <div class="bg-white p-3 rounded border border-amber-200 text-xs text-gray-800 leading-relaxed font-sans shadow-xs" id="suggestedDraftText">
+                --
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Loading Skeleton (visible during inference) -->
+          <div id="reasoningSkeleton" class="hidden space-y-4 animate-pulse">
+            <div class="bg-gray-100 h-24 rounded-lg"></div>
+            <div class="bg-gray-100 h-20 rounded-lg"></div>
+            <div class="bg-gray-100 h-36 rounded-lg"></div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-gray-200 py-3 mt-auto text-center">
+    <div class="max-w-7xl mx-auto px-4">
+      <p class="text-xs text-gray-400">
+        Anchor is a research/eval prototype — not connected to live order systems
+      </p>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT APPLICATION LOGIC -->
+  <script>
+    // In-memory conversation state
+    const state = {
+      threadHistory: [], // Array of { role: 'customer' | 'anchor', text: string, data?: object }
+      currentTestCases: {},
+      isProcessing: false,
+    };
+
+    // DOM Elements
+    const chatMessagesEl = document.getElementById('chatMessages');
+    const emptyChatStateEl = document.getElementById('emptyChatState');
+    const chatFormEl = document.getElementById('chatForm');
+    const messageInputEl = document.getElementById('messageInput');
+    const sendBtnEl = document.getElementById('sendBtn');
+    const sendBtnTextEl = document.getElementById('sendBtnText');
+    const sendBtnIconEl = document.getElementById('sendBtnIcon');
+    const charCountEl = document.getElementById('charCount');
+    const threadCountBadgeEl = document.getElementById('threadCountBadge');
+    const testCaseSelectEl = document.getElementById('testCaseSelect');
+    const loadTestBtnEl = document.getElementById('loadTestBtn');
+    const resetConvBtnEl = document.getElementById('resetConvBtn');
+
+    // Reasoning elements
+    const emptyReasoningStateEl = document.getElementById('emptyReasoningState');
+    const activeReasoningEl = document.getElementById('activeReasoning');
+    const reasoningSkeletonEl = document.getElementById('reasoningSkeleton');
+    const predictedIntentTextEl = document.getElementById('predictedIntentText');
+    const confidencePillEl = document.getElementById('confidencePill');
+    const confidenceProgressBarEl = document.getElementById('confidenceProgressBar');
+    const escalationCardEl = document.getElementById('escalationCard');
+    const escalationBadgeEl = document.getElementById('escalationBadge');
+    const escalationReasonTextEl = document.getElementById('escalationReasonText');
+    const groundingCountEl = document.getElementById('groundingCount');
+    const groundingListEl = document.getElementById('groundingList');
+    const suggestedDraftSectionEl = document.getElementById('suggestedDraftSection');
+    const suggestedDraftTextEl = document.getElementById('suggestedDraftText');
+
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Fetch predefined test cases from API
+    async function loadTestCases() {
+      try {
+        const res = await fetch('/api/test-cases');
+        if (res.ok) {
+          const cases = await res.json();
+          testCaseSelectEl.innerHTML = '<option value="">-- Choose a pre-populated test case --</option>';
+          cases.forEach(c => {
+            state.currentTestCases[c.id] = c;
+            const opt = document.createElement('option');
+            opt.value = c.id;
+            opt.textContent = `${c.label}`;
+            testCaseSelectEl.appendChild(opt);
+          });
+        }
+      } catch (err) {
+        console.error('Failed to load test cases', err);
+      }
+    }
+    loadTestCases();
+
+    // Input character counter
+    messageInputEl.addEventListener('input', () => {
+      charCountEl.textContent = `${messageInputEl.value.length} chars`;
+    });
+
+    // Keyboard navigation: Enter to submit, Shift+Enter for newline
+    messageInputEl.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        chatFormEl.requestSubmit();
+      }
+    });
+
+    // Load selected test case into input
+    function applyTestCase() {
+      const selectedId = testCaseSelectEl.value;
+      if (!selectedId) return;
+      const testCase = state.currentTestCases[selectedId];
+      if (testCase) {
+        messageInputEl.value = testCase.query;
+        charCountEl.textContent = `${testCase.query.length} chars`;
+        messageInputEl.focus();
+      }
+    }
+    testCaseSelectEl.addEventListener('change', applyTestCase);
+    loadTestBtnEl.addEventListener('click', applyTestCase);
+
+    // Reset conversation
+    resetConvBtnEl.addEventListener('click', () => {
+      state.threadHistory = [];
+      chatMessagesEl.innerHTML = '';
+      chatMessagesEl.appendChild(emptyChatStateEl);
+      emptyChatStateEl.classList.remove('hidden');
+      threadCountBadgeEl.textContent = '0 turns';
+      
+      // Reset reasoning panel
+      activeReasoningEl.classList.add('hidden');
+      emptyReasoningStateEl.classList.remove('hidden');
+      reasoningSkeletonEl.classList.add('hidden');
+      messageInputEl.value = '';
+      charCountEl.textContent = '0 chars';
+      testCaseSelectEl.value = '';
+      lucide.createIcons();
+    });
+
+    // Handle form submit
+    chatFormEl.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const message = messageInputEl.value.trim();
+      if (!message || state.isProcessing) return;
+
+      // 1. Hide empty state in chat
+      emptyChatStateEl.classList.add('hidden');
+
+      // 2. Append Customer message bubble
+      appendCustomerMessage(message);
+      messageInputEl.value = '';
+      charCountEl.textContent = '0 chars';
+
+      // 3. Set loading state
+      setProcessingState(true);
+
+      try {
+        // Collect thread history for conversational context
+        const threadContextList = state.threadHistory
+          .filter(turn => turn.role === 'customer' || turn.role === 'anchor')
+          .map(turn => `[${turn.role === 'customer' ? 'Customer' : 'Anchor'}]: ${turn.text}`);
+
+        const response = await fetch('/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            message: message,
+            thread_context: threadContextList.length > 0 ? threadContextList : null,
+          }),
+        });
+
+        if (!response.ok) {
+          const errData = await response.json();
+          throw new Error(errData.detail || 'Server error');
+        }
+
+        const agentResult = await response.json();
+
+        // 4. Append Anchor response bubble in Left Column
+        appendAnchorResponse(agentResult);
+
+        // 5. Update Right Column: Anchor's Reasoning
+        updateReasoningPanel(agentResult);
+
+        // Update turns badge
+        threadCountBadgeEl.textContent = `${state.threadHistory.length} turns`;
+
+      } catch (err) {
+        appendErrorMessage(`Failed to process message: ${err.message}`);
+      } finally {
+        setProcessingState(false);
+      }
+    });
+
+    function setProcessingState(isProcessing) {
+      state.isProcessing = isProcessing;
+      sendBtnEl.disabled = isProcessing;
+      messageInputEl.disabled = isProcessing;
+
+      if (isProcessing) {
+        sendBtnTextEl.textContent = 'Analyzing...';
+        sendBtnIconEl.classList.add('animate-spin');
+        
+        // Show skeleton loading in right panel
+        emptyReasoningStateEl.classList.add('hidden');
+        activeReasoningEl.classList.add('hidden');
+        reasoningSkeletonEl.classList.remove('hidden');
+
+        // Append temporary chat typing indicator
+        appendTypingIndicator();
+      } else {
+        sendBtnTextEl.textContent = 'Send';
+        sendBtnIconEl.classList.remove('animate-spin');
+        reasoningSkeletonEl.classList.add('hidden');
+        removeTypingIndicator();
+        messageInputEl.focus();
+      }
+    }
+
+    function appendCustomerMessage(text) {
+      state.threadHistory.push({ role: 'customer', text: text });
+      
+      const div = document.createElement('div');
+      div.className = 'flex justify-end';
+      div.innerHTML = `
+        <div class="max-w-[85%] bg-gray-100 text-gray-900 border border-gray-200 rounded-2xl rounded-tr-xs px-4 py-3 shadow-xs">
+          <div class="text-[11px] font-medium text-gray-400 mb-1 text-right">Customer</div>
+          <div class="text-sm leading-relaxed whitespace-pre-wrap">${escapeHtml(text)}</div>
+        </div>
+      `;
+      chatMessagesEl.appendChild(div);
+      scrollToBottom();
+    }
+
+    function appendAnchorResponse(result) {
+      const isEscalated = result.escalate === true;
+      state.threadHistory.push({ role: 'anchor', text: result.draft_reply, data: result });
+
+      const badgeHtml = isEscalated
+        ? `<span class="inline-flex items-center gap-1 text-[11px] font-semibold bg-amber-50 text-amber-800 border border-amber-300 px-2 py-0.5 rounded-full">
+             <i data-lucide="alert-triangle" class="w-3 h-3 text-amber-600"></i> Escalated to human
+           </span>`
+        : `<span class="inline-flex items-center gap-1 text-[11px] font-semibold bg-emerald-50 text-emerald-800 border border-emerald-300 px-2 py-0.5 rounded-full">
+             <i data-lucide="check-circle" class="w-3 h-3 text-emerald-600"></i> Auto-handled
+           </span>`;
+
+      const div = document.createElement('div');
+      div.className = 'flex justify-start';
+      div.innerHTML = `
+        <div class="max-w-[88%] bg-white border border-gray-200/90 rounded-2xl rounded-tl-xs p-4 shadow-xs">
+          <div class="flex items-center justify-between gap-3 mb-2.5 pb-2 border-b border-gray-100">
+            <div class="flex items-center space-x-1.5 text-gray-900">
+              <i data-lucide="headset" class="w-4 h-4 text-anchorOrange stroke-[2.2]"></i>
+              <span class="text-xs font-semibold tracking-tight">Anchor</span>
+            </div>
+            ${badgeHtml}
+          </div>
+          <div class="text-sm text-gray-800 leading-relaxed whitespace-pre-wrap">${escapeHtml(result.draft_reply)}</div>
+        </div>
+      `;
+      chatMessagesEl.appendChild(div);
+      lucide.createIcons();
+      scrollToBottom();
+    }
+
+    function appendTypingIndicator() {
+      const div = document.createElement('div');
+      div.id = 'typingIndicator';
+      div.className = 'flex justify-start';
+      div.innerHTML = `
+        <div class="bg-white border border-gray-200 rounded-2xl rounded-tl-xs px-4 py-3 shadow-xs flex items-center space-x-2">
+          <i data-lucide="headset" class="w-3.5 h-3.5 text-anchorOrange stroke-[2]"></i>
+          <span class="text-xs text-gray-400 font-medium">Anchor is evaluating precedents & policy...</span>
+        </div>
+      `;
+      chatMessagesEl.appendChild(div);
+      lucide.createIcons();
+      scrollToBottom();
+    }
+
+    function removeTypingIndicator() {
+      const el = document.getElementById('typingIndicator');
+      if (el) el.remove();
+    }
+
+    function appendErrorMessage(msg) {
+      const div = document.createElement('div');
+      div.className = 'flex justify-center';
+      div.innerHTML = `
+        <div class="bg-rose-50 border border-rose-200 text-rose-700 text-xs px-3.5 py-2 rounded-lg flex items-center gap-1.5">
+          <i data-lucide="alert-circle" class="w-4 h-4 text-rose-500"></i>
+          <span>${escapeHtml(msg)}</span>
+        </div>
+      `;
+      chatMessagesEl.appendChild(div);
+      lucide.createIcons();
+      scrollToBottom();
+    }
+
+    function scrollToBottom() {
+      chatMessagesEl.scrollTop = chatMessagesEl.scrollHeight;
+    }
+
+    // UPDATE RIGHT COLUMN: ANCHOR'S REASONING
+    function updateReasoningPanel(result) {
+      emptyReasoningStateEl.classList.add('hidden');
+      activeReasoningEl.classList.remove('hidden');
+
+      // 1. Predicted Intent & Confidence
+      const intentName = result.intent || 'other_unclear';
+      const confScore = (result.confidence !== undefined) ? result.confidence : 0.0;
+      const confPercent = Math.round(confScore * 100);
+
+      predictedIntentTextEl.textContent = intentName;
+
+      // Color coding thresholds:
+      // green > 75%, amber 50-75%, red < 50%
+      let confBgClass = 'bg-rose-50 text-rose-700 border-rose-200';
+      let barBgClass = 'bg-rose-500';
+
+      if (confPercent >= 75) {
+        confBgClass = 'bg-emerald-50 text-emerald-800 border-emerald-300';
+        barBgClass = 'bg-emerald-500';
+      } else if (confPercent >= 50) {
+        confBgClass = 'bg-amber-50 text-amber-800 border-amber-300';
+        barBgClass = 'bg-amber-500';
+      }
+
+      confidencePillEl.className = `text-xs font-mono font-medium px-2 py-0.5 rounded-full border ${confBgClass}`;
+      confidencePillEl.textContent = `${(confScore * 100).toFixed(1)}% Confidence`;
+
+      confidenceProgressBarEl.className = `h-1.5 rounded-full transition-all duration-500 ${barBgClass}`;
+      confidenceProgressBarEl.style.width = `${Math.min(confPercent, 100)}%`;
+
+      // 2. Escalation Decision & Reason
+      const isEscalated = result.escalate === true;
+      if (isEscalated) {
+        escalationCardEl.className = 'rounded-lg p-4 border border-amber-300 bg-amber-50/50';
+        escalationBadgeEl.className = 'text-xs font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wide border bg-amber-100 text-amber-800 border-amber-300';
+        escalationBadgeEl.textContent = 'YES • ESCALATED TO HUMAN';
+      } else {
+        escalationCardEl.className = 'rounded-lg p-4 border border-emerald-200 bg-emerald-50/40';
+        escalationBadgeEl.className = 'text-xs font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wide border bg-emerald-100 text-emerald-800 border-emerald-300';
+        escalationBadgeEl.textContent = 'NO • AUTONOMOUS HANDLING';
+      }
+
+      escalationReasonTextEl.textContent = result.escalate_reason || 'Policy check passed.';
+
+      // 3. Grounding Sources
+      const sources = result.grounding_sources || [];
+      groundingCountEl.textContent = `${sources.length} retrieved`;
+      groundingListEl.innerHTML = '';
+
+      if (sources.length === 0) {
+        groundingListEl.innerHTML = `
+          <div class="p-3 bg-white rounded border border-gray-200 text-xs text-gray-500 flex items-start gap-2">
+            <i data-lucide="info" class="w-4 h-4 text-gray-400 shrink-0 mt-0.5"></i>
+            <div>
+              <strong class="text-gray-700 block">No precedent found</strong>
+              <span>Anchor had nothing to ground this on.</span>
+            </div>
+          </div>
+        `;
+      } else {
+        sources.forEach((src, idx) => {
+          const docItem = document.createElement('div');
+          docItem.className = 'bg-white rounded-lg border border-gray-200 shadow-2xs overflow-hidden text-xs';
+          
+          const issueSnippet = src.customer_issue || src.title || 'Historical Inquiry Precedent';
+          const replySnippet = src.content || '';
+          const scoreDisplay = (src.score !== undefined) ? Number(src.score).toFixed(3) : 'N/A';
+
+          docItem.innerHTML = `
+            <details class="group">
+              <summary class="p-3 cursor-pointer select-none flex items-center justify-between hover:bg-gray-50/80 transition list-none">
+                <div class="flex items-center space-x-2 truncate pr-2">
+                  <span class="w-4 h-4 rounded-full bg-gray-100 text-gray-600 flex items-center justify-center text-[10px] font-mono shrink-0">
+                    ${idx + 1}
+                  </span>
+                  <span class="font-medium text-gray-800 truncate">${escapeHtml(issueSnippet.substring(0, 50))}${issueSnippet.length > 50 ? '...' : ''}</span>
+                </div>
+                <div class="flex items-center space-x-2 shrink-0">
+                  <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200">
+                    Sim: ${scoreDisplay}
+                  </span>
+                  <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-gray-400 group-open:rotate-180 transition-transform"></i>
+                </div>
+              </summary>
+              <div class="px-3 pb-3 pt-1 border-t border-gray-100 bg-gray-50/40 space-y-2 text-[11px]">
+                <div>
+                  <span class="text-gray-500 font-medium block">Original Customer Issue:</span>
+                  <div class="text-gray-700 bg-white p-2 rounded border border-gray-200/80 mt-0.5">
+                    ${escapeHtml(issueSnippet)}
+                  </div>
+                </div>
+                <div>
+                  <span class="text-gray-500 font-medium block">Brand Reply Snippet:</span>
+                  <div class="text-gray-700 bg-white p-2 rounded border border-gray-200/80 mt-0.5">
+                    ${escapeHtml(replySnippet)}
+                  </div>
+                </div>
+                <div class="flex items-center justify-between text-[10px] text-gray-400 font-mono pt-1">
+                  <span>Doc ID: ${escapeHtml(src.doc_id || 'N/A')}</span>
+                  <span>Category: ${escapeHtml(src.category || 'N/A')}</span>
+                </div>
+              </div>
+            </details>
+          `;
+          groundingListEl.appendChild(docItem);
+        });
+      }
+
+      // 4. Suggested Draft (Visible if Escalated)
+      if (isEscalated && result.draft_reply) {
+        suggestedDraftSectionEl.classList.remove('hidden');
+        suggestedDraftTextEl.textContent = result.draft_reply;
+      } else {
+        suggestedDraftSectionEl.classList.add('hidden');
+      }
+
+      lucide.createIcons();
+    }
+
+    function escapeHtml(text) {
+      if (!text) return '';
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+  </script>
+</body>
+</html>

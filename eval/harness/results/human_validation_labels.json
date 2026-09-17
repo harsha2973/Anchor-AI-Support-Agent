@@ -1,0 +1,55 @@
+[
+  {
+    "sample_id": "VAL_001",
+    "test_id": "GOLDEN_001",
+    "difficulty": "routine",
+    "customer_query": "where is my package? Last time you deliver to my neighbors and this time it's no where. :'(",
+    "thread_context": "None (opening turn)",
+    "agent_response": "Hello! Terribly sorry for the frustration, Ahsan! What's the updated tracking information state here: https://t.co/Y5jpI9gRhE",
+    "escalated": false,
+    "escalate_reason": "Autonomous handling approved: High confidence (85.00%) in intent 'order_status_delay' backed by 3 qualified grounding precedent(s).",
+    "retrieved_precedents": [
+      {
+        "doc_id": "PRECEDENT_amz_1002197_1002196",
+        "category": "order_status_delay",
+        "content": "Terribly sorry for the frustration, Ahsan! What's the updated tracking information state here: https://t.co/Y5jpI9gRhE"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1108320_1108318",
+        "category": "order_status_delay",
+        "content": "Hello, Ayat! Could you please tell me who the carrier for your package is? We're here to help! https://t.co/Y5jpI9gRhE ^MW"
+      },
+      {
+        "doc_id": "PRECEDENT_amz_1052385_1052383",
+        "category": "order_status_delay",
+        "content": "your family members/neighbors/security guards for the order package? 2/2 ^AP"
+      }
+    ],
+    "_judge_evaluation": {
+      "test_id": "GOLDEN_001",
+      "grounding_score": 5,
+      "correctness_score": 5,
+      "tone_score": 5,
+      "completeness_score": 5,
+      "overall_score": 5.0,
+      "passed": true,
+      "critique": "Grounded cleanly in precedent with empathetic tone and clear guidance."
+    },
+    "human_score_template": {
+      "grounding_score": null,
+      "correctness_score": null,
+      "tone_score": null,
+      "completeness_score": null,
+      "passed": null,
+      "notes": ""
+    },
+    "human_scores": {
+      "grounding_score": 4,
+      "correctness_score": 4,
+      "tone_score": 5,
+      "completeness_score": 4,
+      "passed": true,
+      "notes": ""
+    }
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "sample_count": 1,
+  "simple_percent_agreement": 1.0,
+  "cohens_kappa": 1.0,
+  "kappa_interpretation": "Almost Perfect Agreement",
+  "confusion_matrix": {
+    "both_passed": 1,
+    "human_pass_judge_fail": 0,
+    "human_fail_judge_pass": 0,
+    "both_failed": 0
+  },
+  "mean_absolute_errors": {
+    "grounding_mae": 1.0,
+    "correctness_mae": 1.0,
+    "tone_mae": 0.0,
+    "completeness_mae": 1.0
+  },
+  "discrepancy_count": 0,
+  "discrepancies": []
+}
